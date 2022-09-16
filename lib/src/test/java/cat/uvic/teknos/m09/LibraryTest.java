@@ -7,8 +7,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
+    /*
     @Test void someLibraryMethodReturnsTrue() {
-        Library classUnderTest = new Library();
+        cryptoUtils classUnderTest = new cryptoUtils();
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
     }
+    */
+
+
 }
