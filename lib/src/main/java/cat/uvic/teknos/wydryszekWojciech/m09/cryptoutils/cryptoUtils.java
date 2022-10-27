@@ -1,4 +1,4 @@
-package cat.uvic.teknos.m09;
+package cat.uvic.teknos.wydryszekWojciech.m09;
 
 import java.io.IOException;
 import java.security.SecureRandom;
@@ -13,7 +13,7 @@ public class cryptoUtils {
         var hashAlgorithm = properties.get("hash.algorithm");
 
         var salt = Boolean.parseBoolean(properties.getProperty("hash.salt"));
-        
+
         if(salt == true)
             getSalt();
     }
