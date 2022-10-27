@@ -7,11 +7,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.*;
 import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
-import java.util.Base64;
 import java.util.Properties;
 
-public class cryptoUtils {
+public class CryptoUtils {
     /***
      * Symmetric encryption algorithm
      * WydryszekWojciech implementation for encryption message encryption algorithm
@@ -31,7 +29,7 @@ public class cryptoUtils {
 
         byte[] cipherText = null;
 
-        properties.load(cryptoUtils.class.getResourceAsStream("/hash.properties"));
+        properties.load(CryptoUtils.class.getResourceAsStream("/hash.properties"));
 
         var hashAlgorithm = String.valueOf(properties.get("hash.algorithm"));
 
