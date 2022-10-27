@@ -6,7 +6,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.*;
+import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
 import java.util.Properties;
 
 public class CryptoUtils {
@@ -29,7 +31,7 @@ public class CryptoUtils {
 
         byte[] cipherText = null;
 
-        properties.load(CryptoUtils.class.getResourceAsStream("/hash.properties"));
+        properties.load(cat.uvic.teknos.wydryszekWojciech.m09.cryptoutil.CryptoUtils.class.getResourceAsStream("/hash.properties"));
 
         var hashAlgorithm = String.valueOf(properties.get("hash.algorithm"));
 
@@ -123,10 +125,13 @@ public class CryptoUtils {
      * @throws UnrecoverableKeyException
      * @throws InvalidKeyException
      */
-    public boolean verify(byte[] message, byte[] signature, byte[] certificate) throws NoSuchAlgorithmException, CertificateException, FileNotFoundException, SignatureException, KeyStoreException, UnrecoverableKeyException, InvalidKeyException {
+    public boolean verify(byte[] message, byte[] signature, Certificate certificate) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException {
 
         var signer = Signature.getInstance("SHA256withRSA");
 
+        var publicKey = certificate.getPublicKey();
+
+        signer.initVerify(publicKey);
         signer.update(message);
 
         var isValid = signer.verify(signature);
