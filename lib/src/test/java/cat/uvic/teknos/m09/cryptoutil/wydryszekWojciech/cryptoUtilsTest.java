@@ -1,14 +1,12 @@
-package cat.uvic.teknos.wydryszekWojciech.m09.cryptoutil;
+package cat.uvic.teknos.m09.cryptoutil.wydryszekWojciech;
 
 import org.junit.jupiter.api.Test;
-import cat.uvic.teknos.wydryszekWojciech.m09.cryptoutil.CryptoUtils;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.security.*;
-import java.security.cert.CertificateException;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;

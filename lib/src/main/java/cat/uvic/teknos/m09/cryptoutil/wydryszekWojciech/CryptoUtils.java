@@ -1,4 +1,4 @@
-package cat.uvic.teknos.wydryszekWojciech.m09.cryptoutil;
+package cat.uvic.teknos.m09.cryptoutil.wydryszekWojciech;
 
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.security.*;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
 import java.util.Properties;
 
 public class CryptoUtils {
@@ -31,7 +30,7 @@ public class CryptoUtils {
 
         byte[] cipherText = null;
 
-        properties.load(cat.uvic.teknos.wydryszekWojciech.m09.cryptoutil.CryptoUtils.class.getResourceAsStream("/hash.properties"));
+        properties.load(CryptoUtils.class.getResourceAsStream("/hash.properties"));
 
         var hashAlgorithm = String.valueOf(properties.get("hash.algorithm"));
 
