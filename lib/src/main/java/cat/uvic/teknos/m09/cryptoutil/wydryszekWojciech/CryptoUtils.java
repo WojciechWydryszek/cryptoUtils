@@ -11,19 +11,19 @@ import java.security.cert.CertificateException;
 import java.util.Properties;
 
 public class CryptoUtils {
-    /***
+    /**
      * Symmetric encryption algorithm
      * WydryszekWojciech implementation for encryption message encryption algorithm
-     * @param plainText
-     * @param password
+     * @param plainText text in byte[]
+     * @param password password String
      * @return byte[]
-     * @throws IOException
-     * @throws NoSuchAlgorithmException
-     * @throws NoSuchPaddingException
-     * @throws InvalidAlgorithmParameterException
-     * @throws InvalidKeyException
-     * @throws IllegalBlockSizeException
-     * @throws BadPaddingException
+     * @throws IOException input output exception
+     * @throws NoSuchAlgorithmException algorithm exeption
+     * @throws NoSuchPaddingException padding exception
+     * @throws InvalidAlgorithmParameterException invalid algorith exception
+     * @throws InvalidKeyException key exception
+     * @throws IllegalBlockSizeException block size exception
+     * @throws BadPaddingException bad padding exception
      */
     public byte[] encrypt(byte[] plainText, String password) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidAlgorithmParameterException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
         var properties = new Properties();
@@ -58,16 +58,16 @@ public class CryptoUtils {
         return cipherText;
     }
 
-    /***
+    /**
      * Symmetric encryption algorithm
      * WydryszekWojciech implementation for encryption message decrypt algorithm
-     * @param cipherText
-     * @param password
+     * @param cipherText text byte[]
+     * @param password password String
      * @return byte[]
-     * @throws NoSuchPaddingException
-     * @throws NoSuchAlgorithmException
-     * @throws IllegalBlockSizeException
-     * @throws BadPaddingException
+     * @throws NoSuchPaddingException  padding exeption
+     * @throws NoSuchAlgorithmException algorithm exeption
+     * @throws IllegalBlockSizeException clock size exeption
+     * @throws BadPaddingException bad padding exeption
      */
     public byte[] decrypt(byte[] cipherText, String password) throws NoSuchPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException {
         var cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
@@ -76,18 +76,18 @@ public class CryptoUtils {
         return decryptedTextBytes;
     }
 
-    /***
+    /**
      * Asymmetric signature algorithm
      * WydryszekWojciech implementation for sign message
-     * @param message
+     * @param message message String
      * @return byte[]
-     * @throws KeyStoreException
-     * @throws IOException
-     * @throws CertificateException
-     * @throws NoSuchAlgorithmException
-     * @throws UnrecoverableKeyException
-     * @throws InvalidKeyException
-     * @throws SignatureException
+     * @throws KeyStoreException key store exeption
+     * @throws IOException input output exeption
+     * @throws CertificateException certificate exeption
+     * @throws NoSuchAlgorithmException algorithm exeption
+     * @throws UnrecoverableKeyException key exeption
+     * @throws InvalidKeyException invalid key exeption
+     * @throws SignatureException signature exeption
      */
     public byte[] sign(byte[] message) throws KeyStoreException, IOException, CertificateException, NoSuchAlgorithmException, UnrecoverableKeyException, InvalidKeyException, SignatureException {
 
@@ -109,20 +109,16 @@ public class CryptoUtils {
         return signature;
     }
 
-    /***
+    /**
      * Asymmetric verify algorithm
      * WydryszekWojciech implementation for verify signature
-     * @param message
-     * @param signature
-     * @param certificate
-     * @return boolean
-     * @throws NoSuchAlgorithmException
-     * @throws CertificateException
-     * @throws FileNotFoundException
-     * @throws SignatureException
-     * @throws KeyStoreException
-     * @throws UnrecoverableKeyException
-     * @throws InvalidKeyException
+     * @param message message for encrypth
+     * @param signature signature in byte[]
+     * @param certificate certificate Object
+     * @return Boolean
+     * @throws NoSuchAlgorithmException algorithm exeption
+     * @throws SignatureException signature exeption
+     * @throws InvalidKeyException invalid key exeption
      */
     public boolean verify(byte[] message, byte[] signature, Certificate certificate) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException {
 
