@@ -1,4 +1,4 @@
-package cat.uvic.teknos.m09.cryptoutil.wydryszekWojciech;
+package cat.uvic.teknos.m09.wydryszekWojciech.cryptoutils;
 
 import org.junit.jupiter.api.Test;
 

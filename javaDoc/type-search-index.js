@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"cat.uvic.teknos.m09.cryptoutil.wydryszekWojciech","l":"CryptoUtils"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"cat.uvic.teknos.m09.wydryszekWojciech.cryptoutils","l":"CryptoUtils"}]

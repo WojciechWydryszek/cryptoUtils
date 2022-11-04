@@ -1,9 +1,8 @@
-package cat.uvic.teknos.m09.cryptoutil.wydryszekWojciech;
+package cat.uvic.teknos.m09.wydryszekWojciech.cryptoutils;
 
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.*;
 import java.security.cert.Certificate;
